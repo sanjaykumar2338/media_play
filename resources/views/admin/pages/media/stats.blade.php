@@ -75,6 +75,8 @@
                                     <tr>
                                         <th class="col-sm-1 col-md-1">Sr. No.</th>
                                         <th class="col-sm-1 col-md-1">IP</th>
+                                        <th class="col-sm-1 col-md-1">Created On</th>
+                                        <th class="col-sm-1 col-md-1">Updated On</th>
                                     </tr>
                                 </thead>
                     <tbody>
@@ -87,6 +89,12 @@
                                         </td>
                                         <td class="col-sm-1 col-md-1">
                                            {{ $stat->ip }}
+                                        </td>
+                                        <td class="col-sm-1 col-md-1">
+                                           {{ $stat->created_at }}
+                                        </td>
+                                        <td class="col-sm-1 col-md-1">
+                                           {{ $stat->updated_at }}
                                         </td>
                                         </td>
 
