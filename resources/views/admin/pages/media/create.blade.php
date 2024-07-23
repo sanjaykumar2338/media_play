@@ -49,22 +49,22 @@
                 </div>
 
                 <div class="form-group" style="display: flex; align-items: center;">
-                <label for="url">Duration:</label><br>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <label for="hour" style="margin-right: 10px;">Hour:</label>
+                  <label for="duration">Duration:</label><br>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <label for="hour" style="margin-right: 10px;">Hour</label>
                   <select class="form-control" id="hour" name="hour" style="width: 100px; margin-right: 10px;">
                       @for ($i = 0; $i <= 24; $i++)
                           <option value="{{ $i }}">{{ $i }}</option>
                       @endfor
                   </select>
                   
-                  <label for="minute" style="margin-right: 10px;">Minute:</label>
+                  <label for="minute" style="margin-right: 10px;">Minute</label>
                   <select class="form-control" id="minute" name="minute" style="width: 100px; margin-right: 10px;">
                       @for ($i = 0; $i <= 59; $i++)
                           <option value="{{ $i }}">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</option>
                       @endfor
                   </select>
                   
-                  <label for="second" style="margin-right: 10px;">Second:</label>
+                  <label for="second" style="margin-right: 10px;">Second</label>
                   <select class="form-control" id="second" name="second" style="width: 100px;">
                       @for ($i = 0; $i <= 59; $i++)
                           <option value="{{ $i }}">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</option>
