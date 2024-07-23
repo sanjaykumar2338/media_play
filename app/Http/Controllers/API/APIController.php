@@ -33,6 +33,12 @@ class APIController extends Controller
     }
 
     public function updatestats(Request $request){
+        $media = Medias::find($request->id);
+        if ($media) {
+            $media->status = 0;
+            $media->save();
+        }
+
         Stats::insert(['media' => $request->id,'ip'=> $request->ip]);
 
         // Prepare the response data
