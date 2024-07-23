@@ -94,6 +94,10 @@ class MediaController extends Controller
         $media = new Medias();
         $media->title = $request->input('title');
         $media->url = $request->input('url');
+        $media->hour = $request->input('hour', 0); // Default to 0 if not provided
+        $media->minute = $request->input('minute', 0);
+        $media->second = $request->input('second', 0);
+
         $media->save();
         return redirect('/admin/media')->with('status','Media Added Successfully.');
     }
@@ -141,6 +145,10 @@ class MediaController extends Controller
 
         $media->title = $request->input('title');
         $media->url = $request->input('url');
+        $media->hour = $request->input('hour', 0); // Default to 0 if not provided
+        $media->minute = $request->input('minute', 0);
+        $media->second = $request->input('second', 0);
+
         $media->update();
         return redirect('/admin/media')->with('status','Media Updated Successfully.');
     }
@@ -162,6 +170,10 @@ class MediaController extends Controller
 
         //delete product title, description, amount and image from MySQL
         $media = Medias::find($id);
+        if($media){
+            Stats::where('media',$id)->delete();
+        }
+
         $media->delete();
         return redirect('/admin/media')->with('status', 'Media Deleted Successfully!');
     }

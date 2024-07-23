@@ -47,6 +47,29 @@
                   <label for="product_name">Media URL:</label>
                   <input type="url" value="{{$media->url}}"  class="form-control" id="url" placeholder="Enter URL" name="url">
                 </div>
+
+                <div class="form-group" style="display: flex; align-items: center;">
+                  <label for="hour" style="margin-right: 10px;">Hour:</label>
+                  <select class="form-control" id="hour" name="hour" style="width: 100px; margin-right: 10px;">
+                      @for ($i = 0; $i <= 24; $i++)
+                          <option value="{{ $i }}" {{ $media->hour == $i ? 'selected' : '' }}>{{ $i }}</option>
+                      @endfor
+                  </select>
+                  
+                  <label for="minute" style="margin-right: 10px;">Minute:</label>
+                  <select class="form-control" id="minute" name="minute" style="width: 100px; margin-right: 10px;">
+                      @for ($i = 0; $i <= 59; $i++)
+                          <option value="{{ $i }}" {{ $media->minute == $i ? 'selected' : '' }}>{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</option>
+                      @endfor
+                  </select>
+                  
+                  <label for="second" style="margin-right: 10px;">Second:</label>
+                  <select class="form-control" id="second" name="second" style="width: 100px;">
+                      @for ($i = 0; $i <= 59; $i++)
+                          <option value="{{ $i }}" {{ $media->second == $i ? 'selected' : '' }}>{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</option>
+                      @endfor
+                  </select>
+                </div>
                 
                 <button type="submit" class="btn btn-primary">UPDATE</button>
               </form>

@@ -19,7 +19,7 @@ class APIController extends Controller
     public function getMediaData()
     {
         // Fetch only id and url from the Medias model where status is 1
-        $mediaData = Medias::select('id', 'url')->where('status', 1)->get();
+        $mediaData = Medias::select('id', 'url','hour','minute','second')->where('status', 1)->get();
         
         // Prepare the response data
         $response = [
